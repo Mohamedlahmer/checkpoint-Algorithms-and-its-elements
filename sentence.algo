@@ -1,0 +1,63 @@
+ALGORITHM sentence
+VAR
+
+str : STRING;
+leng : INTEGER:=0 ;
+word : INTEGER:=1 ;
+val : INTEGER :=0 ;
+i : INTEGER;
+
+
+
+BEGIN
+
+REPEAT
+    Read (str)
+UNTIL (str[str.length]= "." and str[0] <> " ")    
+
+
+
+
+FOR i FROM 1 TO str.length STEP 1  DO
+    length:=length +1
+END_FOR
+write (length)
+
+
+
+
+
+FOR i FROM 1 TO str.length STEP 1  DO
+    
+IF (str[i]= " ") THEN
+    word:= word +1
+END_IF
+
+END_FOR
+write (word)
+
+
+
+
+
+
+FOR i FROM 1 TO str.length STEP 1  DO
+    
+SWITCH (str.toUpperCase[i]) DO
+   
+    CASE 'A' : val = val +1; BREAK ;
+    CASE 'E': val = val +1; BREAK ;
+    CASE 'I' : val = val +1; BREAK ;
+    CASE 'O' : val = val +1; BREAK ;
+    CASE 'U' : val = val +1; BREAK ;
+    CASE 'Y' : val = val +1; BREAK ;
+
+END_SWITCH
+
+END_FOR
+write (val)
+
+
+
+
+END
