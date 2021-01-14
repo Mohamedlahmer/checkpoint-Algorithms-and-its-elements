@@ -1,7 +1,7 @@
 ALGORITHM sentence
 VAR
 
-str : STRING;
+str : STRING[];
 leng : INTEGER:=0 ;
 word : INTEGER:=1 ;
 val : INTEGER :=0 ;
@@ -18,7 +18,7 @@ UNTIL (str[str.length]= "." and str[0] <> " ")
 
 
 
-FOR i FROM 1 TO str.length STEP 1  DO
+FOR i FROM 0 TO str.length-1 STEP 1  DO
     length:=length +1
 END_FOR
 write (length)
@@ -27,7 +27,7 @@ write (length)
 
 
 
-FOR i FROM 1 TO str.length STEP 1  DO
+FOR i FROM 0 TO str.length-1 STEP 1  DO
     
 IF (str[i]= " ") THEN
     word:= word +1
@@ -41,9 +41,9 @@ write (word)
 
 
 
-FOR i FROM 1 TO str.length STEP 1  DO
+FOR i FROM 0 TO str.length-1 STEP 1  DO
     
-SWITCH (str.toUpperCase[i]) DO
+SWITCH (str[i].toUpperCase()) DO
    
     CASE 'A' : val = val +1; BREAK ;
     CASE 'E': val = val +1; BREAK ;
